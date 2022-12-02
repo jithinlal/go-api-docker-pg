@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gorilla/mux"
 	"github.com/jithinlal-gelato/go_api/handlers"
 	"github.com/jithinlal-gelato/go_api/store"
@@ -16,8 +15,6 @@ type Args struct {
 
 func Run(args Args) error {
 	router := mux.NewRouter().PathPrefix("/api/v1/").Subrouter()
-
-	fmt.Println(args)
 
 	st := store.NewPostgresEventStore(args.conn)
 	hnd := handlers.NewEventHandler(st)
