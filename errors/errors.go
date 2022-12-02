@@ -71,7 +71,7 @@ func (err *Error) String() string {
 	return fmt.Sprintf("error: code=%s message:%s", http.StatusText(err.Code), err.Message)
 }
 
-// JSON convert Error in json
+// Json convert Error in json
 func (err *Error) Json() []byte {
 	if err == nil {
 		return []byte("{}")
